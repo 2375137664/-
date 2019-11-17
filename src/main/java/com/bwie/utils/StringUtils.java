@@ -4,6 +4,8 @@ import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.junit.Test;
+
 /***
  * 
  * @author 孙泽龙
@@ -49,6 +51,51 @@ public class StringUtils {
 		Pattern p = Pattern.compile(regex);
 		Matcher m = p.matcher(str);
 		return m.find();
+	}
+	/***
+	 * 
+	* @Title: isMobile  
+	* @Description: 判断是否是数字
+	* @param @param str
+	* @param @return     
+	* @return boolean    
+	* @throws
+	 */
+	
+	public static boolean isNumber(Integer i) {
+		
+		try {
+			if (i>0||i<0||i==0) {
+				return true;
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+				return false;
+		}
+		return false;
+		
+	}
+	/***
+	 * 
+	 * @Title: isEnglish  
+	 * @Description: 判断是否全为字母
+	 * @param @param str
+	 * @param @return     
+	 * @return boolean    
+	 * @throws
+	 */
+	@Test
+	public static boolean isEnglish(String i) {
+		String regex = "[a-zA-Z]?";
+		Pattern p = Pattern.compile(regex);
+		Matcher m = p.matcher(i);
+		
+		
+		return m.find();
+		
+		
+		
 	}
 	/**
 	 * 
@@ -124,21 +171,26 @@ public class StringUtils {
         int lowPos;
         Random random = new Random();
 
+
         hightPos = (176 + Math.abs(random.nextInt(39)));
         lowPos = (161 + Math.abs(random.nextInt(93)));
+
 
         byte[] b = new byte[2];
         b[0] = (Integer.valueOf(hightPos)).byteValue();
         b[1] = (Integer.valueOf(lowPos)).byteValue();
 
+
         try {
             str = new String(b, "GBK");
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("閿欒");
+            System.out.println("错误");
         }
 
+
         	return str.charAt(0);
+
 
 	}
 	/**
@@ -156,8 +208,16 @@ public class StringUtils {
 			sb.append(StringUtils.getRandomCn(n));
 		}
 
+
         return sb.toString();
 
+
 	}
-	
+	static Random rnd = new Random();
+	public static String getRandomNumber(int digCount) {
+	    StringBuilder sb = new StringBuilder(digCount);
+	    for(int i=0; i < digCount; i++)
+	        sb.append((char)('0' + rnd.nextInt(10)));
+	    return sb.toString();
+	}  
 }

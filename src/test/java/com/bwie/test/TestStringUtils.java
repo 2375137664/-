@@ -1,4 +1,4 @@
-package com.bwie.test;
+/*package com.bwie.test;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -15,7 +15,7 @@ public class TestStringUtils {
 		
 		
 		
-		assertTrue( StringUtils.isBlank("   "));
+		assertTrue( StringUtils.isBlank(" 1111  "));
 		
 	}
 	
@@ -51,3 +51,4 @@ public class TestStringUtils {
 	
 	
 }
+*/

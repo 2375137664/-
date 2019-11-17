@@ -1,4 +1,4 @@
-package com.bwie.test;
+/*package com.bwie.test;
 
 import static org.junit.Assert.assertTrue;
 
@@ -43,3 +43,4 @@ public class TestDate {
 
 	
 }
+*/
